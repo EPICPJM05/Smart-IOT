@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Control-Panel</title>
+    <script type="text/javascript" src="Commands.js"></script>
+        <script>
+        setKey('{{ApiKey}}','{{Name}}');
+        </script>
+    <style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    
+}
+
+header {
+    background-color: #006699;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    width: 50vw
+    margin: auto;
+}
+
+section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+h2 {
+    color: #006699;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #006699;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005580;
+}
+
+footer {
+    background-color: #006699;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LED Control Panel</h1>
+        <p>Control LED at PJM's desk with analog and digital methods</p>
+    </header>
+    <main>
+        <section id="analog-control">
+            <h2>Intensity Control</h2>
+            <p>Use the slider below to adjust the brightness of the LED:</p>
+            <input type="range" min="0" max="255" value="0" id="analog-slider" onchange="valueChange();">
+            <span id="analog-value">0</span>
+        </section>
+        <section id="digital-control">
+            <h2>Digital Control</h2>
+            <p>Use the buttons below to turn the LED on or off:</p>
+            <button id="digital-on" onclick="digitalWrite(0, 'HIGH');">Turn On</button>
+            <button id="digital-off" onclick="digitalWrite(0, 'LOW');">Turn Off</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LED Control Page By PJM</p>
+    </footer>
+    <script>
+        function valueChange(){
+        var AnalogValue = document.getElementById("analog-value").innerText= document.getElementById("analog-slider").value;
+        console.log(AnalogValue);
+        analogWrite(0,AnalogValue);
+        }
+    </script>
+</body>
+</html>
