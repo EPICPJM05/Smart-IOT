@@ -8,6 +8,7 @@ var HIGH = "HIGH"
 var LOW  = "LOW"
 var debug = 0
 
+//I have hosted my application via Bolt's Cloud services. The api_key and d_name are kept private on the cloud.
 var api_key = "";
 var d_name = "";
 var base_url = "https://cloud.boltiot.com/remote/"
