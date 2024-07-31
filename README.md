@@ -14,6 +14,11 @@ Hardware I have used is:
 
 <img src="https://raw.githubusercontent.com/EPICPJM05/ABHAR/main/draft/Screenshot%202024-07-31%20084017.png" width="790" >
 
-### Video Demonstration 
+### Use Cases
 
-<video width="788.54" height="443" type="video/mp4" src="https://www.youtube.com/embed/fWAAeoOfzjA">
+1. Home LED, Fan, AC Automation
+2. Smart Alarm System
+3. Plant Monitoring System
+4. Auto-Irrigation System
+5. Smart Parking System
+6. And many more...
